@@ -8,6 +8,7 @@ describe "#age" do
 
     it "returns a value of type Integer" do
         expect(age(1990)).to be_a(Integer)
-        expect(age(1990)).to be(32)   
+        expect(age(1990)).to be(32) 
+        expect(age(1999)).to be(23)   
     end
     end
