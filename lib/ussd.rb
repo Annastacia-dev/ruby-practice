@@ -1,24 +1,3 @@
-#Nested Conditionals
-#Building a USSD for Moringa students & staff to get airtime
-#The USSD code is *555#
-#Option 1: Student
-#Option 2: Staff
-#Option 3: Exit
-#Student
-#If student, ask for student cohort
-#Cohort options: 64-68A, 64-68B, 64-68C
-#Ask for student name
-#Ask student to choose TM Name :Mwikali, Faith, Sam
-#Ask student to enter amount
-#Print message: "Dear #{studentname}, you have requested #{amount} from #{tmname}. Your request will be processed shortly"
-#Staff
-#If staff, ask for category:
-#Category options: Classroom, General
-#Ask for staff name
-#Ask staff to enter amount
-#Print message: "Dear #{staffname}, you have requested #{amount}. Your request will be processed shortly"
-
-
 def moringa_airtime
     puts "Please dial *555# to continue"
     ussd = gets.chomp
@@ -45,7 +24,7 @@ def moringa_airtime
                 if tmname == 1 || tmname == 2 || tmname == 3
                     puts "Please enter amount"
                     amount = gets.chomp
-                    puts "Dear #{studentname}, you have requested airtime of #{amount} KSHS. Your request will be processed shortly"
+                    puts "Dear #{studentname}, you have requested KSH #{amount} of airtime. Your request will be processed shortly"
                 else
                     puts "Invalid TM Name"
                 end
@@ -53,14 +32,16 @@ def moringa_airtime
                 puts "Invalid cohort"
             end
         elsif option == "2"
-            puts "Please enter your category"
-            category = gets.chomp
-            if category == "Classroom" || category == "General"
+            puts "Please choose your category"
+            puts "1. Classroom"
+            puts "2. General"
+            category = gets.chomp.to_i
+            if category == 1 || category == 2
                 puts "Please enter your name"
                 staffname = gets.chomp
                 puts "Please enter amount"
                 amount = gets.chomp
-                puts "Dear #{staffname}, you have requested #{amount}. Your request will be processed shortly"
+                puts "Dear #{staffname}, you have requested KSH #{amount} of airtime. Your request will be processed shortly"
             else
                 puts "Invalid category"
             end
