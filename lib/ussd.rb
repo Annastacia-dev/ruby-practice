@@ -2,12 +2,12 @@ def moringa_airtime
     puts "Please dial *555# to continue"
     ussd = gets.chomp
     if ussd == "*555#"
-        puts "Welcome to Moringa Airtime Portal"
-        puts "Press 1 for Student"
-        puts "Press 2 for Staff"
-        puts "Press 3 to Exit"
-        option = gets.chomp
-        if option == "1"
+        puts "Welcome to Moringa Airtime"
+        puts "Enter 1 for Student"
+        puts "Enter 2 for Staff"
+        puts "Enter 3 to Exit"
+        option = gets.chomp.to_i
+        if option == 1
             puts "Please choose your cohort"
             puts "1. 64-68A"
             puts "2. 64-68B"
@@ -31,7 +31,7 @@ def moringa_airtime
             else
                 puts "Invalid cohort"
             end
-        elsif option == "2"
+        elsif option == 2
             puts "Please choose your category"
             puts "1. Classroom"
             puts "2. General"
@@ -45,8 +45,8 @@ def moringa_airtime
             else
                 puts "Invalid category"
             end
-        elsif option == "3"
-            puts "Thank you for using Moringa Airtime Portal"
+        elsif option == 3
+            puts "Thank you for using Moringa Airtime"
         else
             puts "Invalid option"
         end
